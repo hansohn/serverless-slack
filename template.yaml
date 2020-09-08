@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Serverless Slack SAM Template
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 10
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: ServerlessSlack
+    Description: Lambda Function that forwards aws events to Slack
+    Author: Ryan Hansohn
+    #SpdxLicenseId: MIT
+    #LicenseUrl: LICENSE.txt
+    ReadmeUrl: README.md
+    Labels: ['slack']
+    HomePageUrl: https://github.com/user1/my-app-project
+    SemanticVersion: 0.0.1
+    SourceCodeUrl: https://github.com/user1/my-app-project
+
+Parameters:
+  FunctionName:
+    Type: String
+    Default: ServerlessSlack
+    Description: The name of the Lambda function, up to 64 characters in length. If you don't specify a name, AWS CloudFormation generates one.
+  FunctionRole:
+    Type: String
+    Description: The ARN of an IAM role to use as this function's execution role
+  SlackBotTokenParam:
+    Type: String
+    Default: /slack/bot_token
+    Description: The SSM parameter path of the slack bot token paramter
+  SlackChannelParam:
+    Type: String
+    Default: /slack/notifications_channel
+    Description: The SSM parameter path of the slack channel parameter
+  SNSTopicARN:
+    Type: String
+    Description: The SNS topic arn to read events from
+
+Resources:
+  ServerlessSlackFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: !Ref FunctionName
+      Description: Slack Notification Forwarder
+      CodeUri: serverless/
+      Environment:
+        Variables:
+          SLACK_BOT_TOKEN_PARAM: !Ref SlackBotTokenParam
+          SLACK_CHANNEL_PARAM: !Ref SlackChannelParam
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Role: !Ref FunctionRole
+      Events:
+        ServerlessSlackSNS:
+          Type: SNS  # More info about SNS Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sns
+          Properties:
+            Topic: !Ref SNSTopicARN
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  ServerlessSlackFunction:
+    Description: "Serverless Slack Lambda Function ARN"
+    Value: !GetAtt ServerlessSlackFunction.Arn

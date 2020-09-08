@@ -1,0 +1,22 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventSubscriptionArn": "arn:aws:sns:us-east-2:123456789012:test-preprod-notifications:81991488-633a-4a59-804a-f2017597409e",
+            "EventVersion": "1.0",
+            "Sns": {
+                "Message": "{\"version\":\"0\",\"id\":\"06ffe4ab-d563-f5a7-8a3a-40fed6fb6c70\",\"detail-type\":\"EMR Step Status Change\",\"source\":\"aws.emr\",\"account\":\"123456789012\",\"time\":\"2020-08-14T04:04:17Z\",\"region\":\"us-east-2\",\"resources\":[],\"detail\":{\"severity\":\"INFO\",\"actionOnFailure\":\"CONTINUE\",\"stepId\":\"s-769YLQUV003L\",\"name\":\"SparkPi\",\"clusterId\":\"j-1K48XXXXXHCB\",\"state\":\"PENDING\",\"message\":\"Step s-769YLQUV003L (SparkPi) was added to Amazon EMR cluster j-1K48XXXXXHCB (test-preprod-emr) at 2020-08-14 04:04 UTC and is pending execution.\"}}",
+                "MessageAttributes": {},
+                "MessageId": "abf30a49-1934-5eb5-8e0d-5df916b62b6f",
+                "Signature": "gsR55cCwUlJAZWyV5OisH0bWbffnX2vYNKZkwz3ro2swjvnxY/smf0uPUgaviwf6FYuZQBIDVs21fNMrgSuNcxGRccb6ygqlHDvuVFb+Yyta/rxT/nmPu2dFcGCLzQCfdCt2cRx0WWuyFrVkKz4mdyO/Pem+Vs8ErWFr1VvwwSzhE4Yi8pIuOGcanvo0yKeLuwRE5xKRWNWJ/kIHJjUpB1/Xn3VWwmZqxQI9posW8NT5cyC2+3Za+pCv81NbfNFtgaS2vvDkwbBMqRsVrOeIAGMhzC+jfd1McDMsCQa/iWWfX5pp2UCDCgM1gRvLtP57pjaf9pfchm5vaN/aGfYvUQ==",
+                "SignatureVersion": "1",
+                "SigningCertUrl": "https://sns.us-east-2.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem",
+                "Subject": null,
+                "Timestamp": "2020-08-14T04:04:18.435Z",
+                "TopicArn": "arn:aws:sns:us-east-2:123456789012:test-preprod-notifications",
+                "Type": "Notification",
+                "UnsubscribeUrl": "https://sns.us-east-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-2:123456789012:test-preprod-notifications:81991488-633a-4a59-804a-f2017597409e"
+            }
+        }
+    ]
+}

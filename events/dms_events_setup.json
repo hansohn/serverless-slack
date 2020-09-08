@@ -1,0 +1,22 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventSubscriptionArn": "arn:aws:sns:us-east-2:123456789012:test-preprod-notifications:81991488-633a-4a59-804a-f2017597409e",
+            "EventVersion": "1.0",
+            "Sns": {
+                "Message": "This is a message to notify that DMS will attempt to send you event notifications of type replication-instance to the topic arn:aws:sns:us-east-2:123456789012:test-preprod-notifications.",
+                "MessageAttributes": {},
+                "MessageId": "a6a51640-5cd7-5be9-a155-41ff26b6c992",
+                "Signature": "pgCETv8crvnWVBxW8RQO3jxcYuYszJjPweAerx8zm3Ul3+t7ZzfWO5jHNUJ1fEz1WIkdtPszGKsr1PkjgLruHKli4X3bCH1ue2nniY6ipIG6qQfQIdfm/MDW2Gdu35r+EmLgYhfb194/3XVwe1RyEc5NXYZt9w58NdOZXJ/CQmFRKiwPWVrrDdGDtj3eI7uBHPeWOiLxTeGcaq75ymftYttTGLHn+qdds45lZ2x84FLEtXLYe9wAiZD+Bqo6Q3HSJlPsoktA6wiUawKd7dVUFjXkuernr4tDGxp99LbsFxXuWvajyS10O1aVDtWOshLpb0VynTNIdXGUtm2+zzhwiw==",
+                "SignatureVersion": "1",
+                "SigningCertUrl": "https://sns.us-east-2.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem",
+                "Subject": "DMS Notification Message",
+                "Timestamp": "2020-08-25T20:44:17.855Z",
+                "TopicArn": "arn:aws:sns:us-east-2:123456789012:test-preprod-notifications",
+                "Type": "Notification",
+                "UnsubscribeUrl": "https://sns.us-east-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-2:123456789012:test-preprod-notifications:81991488-633a-4a59-804a-f2017597409e"
+            }
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+boto3
+botocore
+slackclient==2.7.3

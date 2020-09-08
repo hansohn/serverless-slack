@@ -1,0 +1,22 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventSubscriptionArn": "arn:aws:sns:us-east-2:123456789012:test-preprod-notifications:81991488-633a-4a59-804a-f2017597409e",
+            "EventVersion": "1.0",
+            "Sns": {
+                "Message": "{\"version\":\"0\",\"id\":\"00c2cda4-8957-37c4-08f0-9af94076ee79\",\"detail-type\":\"EMR Cluster State Change\",\"source\":\"aws.emr\",\"account\":\"123456789012\",\"time\":\"2020-08-14T04:04:23Z\",\"region\":\"us-east-2\",\"resources\":[],\"detail\":{\"severity\":\"INFO\",\"stateChangeReason\":\"{\\\"code\\\":\\\"\\\",\\\"message\\\":\\\"Running step\\\"}\",\"name\":\"test-preprod-emr\",\"clusterId\":\"j-1K48XXXXXHCB\",\"state\":\"RUNNING\",\"message\":\"Amazon EMR cluster j-1K48XXXXXHCB (test-preprod-emr) began running steps at 2020-08-14 04:04 UTC.\"}}",
+                "MessageAttributes": {},
+                "MessageId": "9a8d53fd-05f7-5fc6-90c5-044d0a707c96",
+                "Signature": "bweORp03HPn23RbzySPJ7gMaEyEpX4N2h290EBXCmkPNi4S8qACu5NThag4QOnfCfjoHZzedgNrr/dy1wgaaxubTLSu1DrT14dkpWdguhEbN6n3dmcLFuvC34QEmYcYL82bjUhTVH42oGP4E6ylJRKGxFx0WqEbuB2Ak5RhpF6BMCBk68Xp/4KNYhLeajLYsUZ603fZ4e5K69yWAX5g+LoKMd/w6rWJHFe+aEBULBE8yakjiiy4RNL7B64OblNiLaILE2b2y2sFIjiUJnziis+hIQbZCRooCU3g552ne5tS17UqRXKNmuHgoeEundOD+4tvyn5hsglr8SuU3aUyGrg==",
+                "SignatureVersion": "1",
+                "SigningCertUrl": "https://sns.us-east-2.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem",
+                "Subject": null,
+                "Timestamp": "2020-08-14T04:04:23.859Z",
+                "TopicArn": "arn:aws:sns:us-east-2:123456789012:test-preprod-notifications",
+                "Type": "Notification",
+                "UnsubscribeUrl": "https://sns.us-east-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-2:123456789012:test-preprod-notifications:81991488-633a-4a59-804a-f2017597409e"
+            }
+        }
+    ]
+}
