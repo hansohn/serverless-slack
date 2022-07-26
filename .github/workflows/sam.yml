@@ -20,10 +20,10 @@ jobs:
       - name: Install Disto Packages
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y software-properties-common jq
+          sudo apt-get install --no-install-recommends -y software-properties-common jq make
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt-get install --no-install-recommends -y python${PYTHON_VERSION}
-      - name: Configure Venv
+      - name: Configure Virtual Environment
         run: |
           make venv
       - name: Configure AWS credentials
