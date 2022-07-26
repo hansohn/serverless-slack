@@ -7,9 +7,12 @@ on:
     branches:
       - main
 
+env:
+  PYTHON_VERSION: 3.9
+
 jobs:
   validate:
-    runs-on: python:3.9-slim
+    runs-on: ubuntu-latest
     outputs:
       env-name: ${{ steps.env-name.outputs.environment }}
     steps:
@@ -17,7 +20,9 @@ jobs:
       - name: Install Disto Packages
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y jq
+          sudo apt-get install --no-install-recommends -y software-properties-common jq
+          sudo add-apt-repository ppa:deadsnakes/ppa
+          sudo apt-get install --no-install-recommends -y python${PYTHON_VERSION}
       - name: Configure Venv
         run: |
           make venv
