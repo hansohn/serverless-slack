@@ -1,0 +1,9 @@
+aws-sam-cli
+black~=21.6b0
+cfn-lint~=0.54.2
+flake8~=3.9.2
+pylint~=2.8.3
+yamllint~=1.26.1
+toml>=0.10.2
+mypy~=0.902
+bandit~=1.7.0

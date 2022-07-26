@@ -6,20 +6,21 @@ Description: >
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
+    Runtime: python3.9
     Timeout: 10
 
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: ServerlessSlack
-    Description: Lambda Function that forwards aws events to Slack
+    Description: Lambda Function that forwards Cloudwatch events to Slack
     Author: Ryan Hansohn
-    #SpdxLicenseId: MIT
-    #LicenseUrl: LICENSE.txt
+    SpdxLicenseId: Apache-2.0
+    LicenseUrl: LICENSE
     ReadmeUrl: README.md
     Labels: ['slack']
-    HomePageUrl: https://github.com/user1/my-app-project
+    HomePageUrl: https://github.com/hansohn/serverless-slack
     SemanticVersion: 0.0.1
-    SourceCodeUrl: https://github.com/user1/my-app-project
+    SourceCodeUrl: https://github.com/hansohn/serverless-slack
 
 Parameters:
   FunctionName:
@@ -47,13 +48,12 @@ Resources:
     Properties:
       FunctionName: !Ref FunctionName
       Description: Slack Notification Forwarder
-      CodeUri: serverless/
+      CodeUri: src/lambda_functions/serverless_slack/
       Environment:
         Variables:
           SLACK_BOT_TOKEN_PARAM: !Ref SlackBotTokenParam
           SLACK_CHANNEL_PARAM: !Ref SlackChannelParam
       Handler: app.lambda_handler
-      Runtime: python3.8
       Role: !Ref FunctionRole
       Events:
         ServerlessSlackSNS:
